@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us Form</title>
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #333A56; /* Adjust the color to match the image */
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      user-select: none;
+    }
+  
+    .contact-container {
+      width: 100%;
+      max-width: 400px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    }
+  
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+  
+    label {
+      color: #555;
+      font-size: 14px;
+    }
+  
+    input[type="email"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 1em;
+      box-sizing: border-box;
+    }
+  
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: #FFEFCE;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 1em;
+      cursor: pointer;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    label {
+        color: #1E1E1E;
+    }
+
+    input#button {
+        background-color: #333A56;
+    }
+    #logo{
+      width: 55px;
+      height: 55px;
+      cursor: pointer;
+      transition: background-color 0.1s linear;
+    }
+    #logoContainer{
+      height: 4em;
+      width: 5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.1s linear;
+    }
+    #logoContainer:hover{
+      background-color: #213555;
+    }
+    #container{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #nav {
+      background-color: #ffffff;
+      color: white;
+      padding: .5em;
+      height: 4em;
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      border: none;
+      position: fixed;
+      z-index: 999;
+      visibility: visible;
+    }
+
+    #nav #btns{
+      width: 30em;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border: none;
+    }
+    #nav #btns button{
+      width: 100%;
+      font-size: 1.2rem;
+      background-color: #ffffff;
+      border: none;
+      transition: background-color 0.1s linear, color 0.1s linear;
+    }
+    #nav #btns button:hover{
+      cursor: pointer;
+      background-color: #213555;
+      color: white;
+    }
+    #hamLogo{
+      width: 3em;
+      height: 3em;
+      margin-right: .4em;
+    }    #ham{
+      height: 3em;
+      background-color: white;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      z-index: 99;
+    }
+    #hamIcon{
+      width: 3em;
+      height: 3em;
+    }
+    #hamBtn, #hamBtn img{
+      width: 100%;
+      height: 100%;
+    }
+    #hamBtn img{
+      transform: scale(.6);
+    }
+    #hamlogo{
+      font-size: 1.5rem;
+      margin-left: 3vw;;
+      font-weight: bold;
+      color: black;
+      margin-right: .5em;
+    }
+    #hamBtn{
+      border: none;
+      background-color: white;
+      cursor: pointer;
+    }
+    #hamBtn:hover{
+      background-color: rgb(211, 211, 211);
+    }
+    #hamcontainer{
+      box-shadow: 0 0 50px 0 black;
+      width: 0vw;
+      height: 100vh;
+      background-color: rgb(255, 255, 255);
+      position: fixed;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      visibility: hidden;
+    }
+    #hamaboutBtn, #hamregisterBtn{
+      width: 100%;
+      height: 4em;
+      text-align: left;
+      background-color: rgb(230, 230, 230);
+      font-size: 1.1rem;
+      border: none;
+      box-sizing: border-box;
+    }
+    #hamaboutBtn{
+      border-top: 1px solid rgb(200, 200, 200);
+      border-bottom: 1px solid rgb(200, 200, 200);
+    }
+    #hamregisterBtn{
+      border-bottom: 1px solid rgb(200, 200, 200);
+    }
+    #hamBTN{
+      height: 4em;
+      text-align: right;
+      border: none;
+    }
+    #hamcontainer img{
+      width: 1.5em;
+      height: 1.5em;
+      margin-right: 1em;
+    }
+    #hamcontainer span{
+      font-family: 'Poppins', sans-serif;
+      margin-left: 2em;
+    }
+    @media (max-width: 485px){
+      #ham{
+        visibility: visible;
+      }
+      #nav{
+        visibility: hidden;
+      }
+      .swiper .swiper-button-next, .swiper .swiper-button-prev{
+        display: none;
+      }
+    }
+</style>
+</head>
+<body>
+<div id="nav">
+  <div id="logoContainer"><img src="logo.PNG" id="logo"></div>
+  <div id="btns">
+    <button id="aboutBtn">About us</button>
+    <button id="registerBtn">Registration</button>
+    <button id="contactBtn">Contact us</button>
+  </div>
+</div>
+<div id="ham">
+  <div id="hamIcon">
+    <button id="hamBtn"><img src="menu-bar.png" id="hamBtnImg"></button>
+  </div>
+  <img src="logo.PNG" id="hamLogo">
+</div>
+<div id="hamcontainer">
+  <button id="hamBTN"><img src="menu-bar.png"></button>
+  <button id="hamaboutBtn"><span>About Us</span></button>
+  <button id="hamregisterBtn"><span>Registration</span></button>
+</div>
+<div id="container">
+  <div class="contact-container">
+    <h2>Contact us</h2>
+    <form action="https://api.web3forms.com/submit" method="post" >
+      <input type="hidden" name="access_key" value="411dadfa-e04a-48c4-a181-19f3a813fa03">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <input type="submit" value="Submit" id="button">
+    </form>
+  </div>
+</div>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
+<script>
+  const logoContainer = document.getElementById('logoContainer')
+  const logo = document.getElementById('logo')
+  const aboutBtn = document.getElementById('aboutBtn')
+
+  logoContainer.onclick = () => {
+    window.location.href = 'index.html'
+  }
+  aboutBtn.onclick = () => {
+    window.location.href = 'index.html'
+  }
+
+  const hamContainer = document.getElementById('hamcontainer')
+    const hamBtn = document.getElementById('hamBtn')
+    const hamBtnImg = document.getElementById('hamBtnImg')
+    const ham = document.getElementById('ham')
+
+    const hamBTN = document.getElementById('hamBTN')
+    const hamaboutBtn = document.getElementById('hamaboutBtn')
+    const hamregisterBtn = document.getElementById('registerBtn')
+    
+    hamregisterBtn.onclick = () => {
+      window.open('https://hitpay.shop/s/1ks6km')
+      
+    }
+    hamaboutBtn.onclick = () => {
+      window.location.href = 'index.html'
+    }
+
+    let expand = false
+
+    document.addEventListener('click', event => {
+      if (event.target !== hamContainer && event.target !== hamBtn && event.target !== hamBtnImg && event.target !== hamregisterBtn){
+        if(expand){
+          hamContainer.style.width = '0vw'
+          hamContainer.style.visibility = 'hidden'
+          hamBTN.style.visibility = 'hidden'
+          hamContainer.style.transition = 'width 0.2s ease-out, visibility 0.3s linear'
+          hamBTN.style.transition = 'visibility 0.15s linear'
+
+          hamaboutBtn.style.visibility = 'hidden'
+          hamregisterBtn.style.visibility = 'hidden'
+          expand = false
+        }
+      }
+    })
+
+    hamBtn.onclick = () => {
+      hamContainer.style.width = '80vw'
+      hamContainer.style.transition = 'width 0.2s ease-out'
+
+      hamContainer.style.visibility = 'visible'
+      hamaboutBtn.style.visibility = 'visible'
+      hamregisterBtn.style.visibility = 'visible'
+      hamBTN.style.visibility = 'visible'
+      expand = true
+    }
+
+    const hamLogo = document.getElementById('hamLogo')
+    hamLogo.onclick = () => {
+      window.location.href = 'index.html'
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+      text-decoration: none;
+    }
+    #nav {
+      background-color: #ffffff;
+      color: white;
+      padding: .5em;
+      height: 4em;
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      border: none;
+      position: fixed;
+      z-index: 999;
+      visibility: visible;
+    }
+
+    #nav #btns{
+      width: 30em;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border: none;
+    }
+    #nav #btns button{
+      width: 100%;
+      font-size: 1.2rem;
+      background-color: #ffffff;
+      border: none;
+      transition: background-color 0.1s linear, color 0.1s linear;
+    }
+    #nav #btns button:hover{
+      cursor: pointer;
+      background-color: #213555;
+      color: white;
+    }
+    #logo{
+      width: 55px;
+      height: 55px;
+    }
+    #hamLogo{
+      width: 3em;
+      height: 3em;
+      margin-right: .4em;
+    }
+    #logoContainer{
+      height: 4em;
+      width: 5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #sec1{
+      height: 100vh;
+      width: 100%;
+      margin: auto;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      user-select: none;
+    }
+    .swiper{
+      width: 100%;
+      height: 100%;
+    }
+    #sec1 img{
+      width: 100%; /* Stretch the width to 100% of the container */
+      height: 100%; /* Stretch the height to 100% of the container */
+      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    }
+    #sec2{
+      background-color: #213555;
+      height: 125vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #FFEFCE;
+    }
+    #sec2content{
+      height: 93%;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    #sec2 #title{
+      font-size: 3.5rem;
+      margin-bottom: 2vh;
+      margin: 0;
+      font-family: "Dancing Script", cursive;
+      letter-spacing: 3px;
+    }
+    #sec2 #sec2content #fp{
+      height: 30%;
+      width: 95%;
+    }
+    #sec2 #sec2content #sp{
+      height: 45%;
+      width: 95%;
+    }
+
+    #sec2 #fp, #sec2 #sp{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      ;
+    }
+    #sec2 #fp #fpimg{
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      ;
+    }
+    #sec2 #sp #spimg{
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      ;
+
+    }
+    #spimg #spsrc{
+      margin-top: 5vw;
+    }
+    #sec2 #fp #fpcontent{
+      font-size: 1.1rem;
+      text-align: justify;
+      margin-left: 2.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      ;
+    }
+    #sec2 #sp #spcontent{
+      font-size: 1.1rem;
+      text-align: justify;
+      margin-right: 2.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      ;
+    }
+    #fpimg #fpsrc, #spimg #spsrc{
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+
+    }
+    #fpimg #fpsrc, #spimg #spsrc{
+      margin-bottom: .5em;
+    }
+    #sec3{
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow: hidden; /* Hide any content that exceeds the container */;
+      background-color: #FFEFCE;
+    }
+    #sec3 img{
+      width: 50%;
+      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+      height: 100%
+    }
+    #sec3 #sec3text{
+      width: 45%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      ;
+    }
+
+    #sec3title{
+      font-size: 2.5rem;
+    }
+    #sec4{
+      height: 145vh;
+      background-color: #213555;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #sec4title{
+      font-size: 2.5rem;
+      color: #FFEFCE;
+    } 
+    #sec4content{
+      width: 90%;
+      height: 92%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      ;
+    }
+    #sec4content div{
+      width: 100%;
+      height: 50%;
+      ;
+    }
+    #sec4row1{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    #sec4row1{
+      margin-top: 3em;
+    }
+    #sec4row2{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    #sec4row1 div, #sec4row2 div{
+      width: 40%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      ;
+    }
+    #sec4row1 #left label, #sec4row1 #right label, #sec4row2 #middle label{
+      font-size: 1.1em;
+      color: #FFEFCE;
+    }
+    #sec4row1 #left p, #sec4row1 #right p, #sec4row2 #middle p{
+      color: #FFEFCE;
+      text-align: justify;
+    }
+    #sec4row1 #left img, #sec4row1 #right img, #sec4row2 #middle img{
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+    }
+    #sec5{
+      height: 20vh;
+      background-color: black;
+    }
+    @media (max-width: 1366px){
+      #sec2 #title, #sec3title, #sec4title{
+        font-size: 2.5rem;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3text div p, #sec4 p{
+        font-size: .9rem;
+      }
+
+    }
+    @media (max-width: 1066px){
+      #sec2{
+        height: 140vh;
+      }
+      #sec3{
+        height: 130vh;
+      }
+      #sec2content div{
+        height: 50%;
+      }
+    }
+    @media (max-width: 882px){
+      #sec2 #title, #sec3title, #sec4title{
+        font-size: 2rem;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3text div p, #sec4 p{
+        font-size: .8rem;
+      }
+    }
+    @media (max-width: 806px){
+      #sec2 #title, #sec3title{
+        font-size: 1.7rem;
+      }
+      #nav #btns button{
+        font-size: .9rem;
+      }
+    }
+    @media (max-width: 738px){
+      #sec2 #fp #fpimg #fpsrc, #sec2 #sp #spimg #spsrc{
+        width: 130px;
+        height: 130px;
+      }
+      #fpimg #fpsrc{
+        margin-bottom: .5em;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3text div p, #sec4 p{
+        font-size: .6rem;
+      }
+      #sec2{
+        height: 90vh;
+      }
+      #sec3{
+        height: 90vh;
+      }
+      #sec4{
+        height: 110vh;
+      }
+    }
+    @media (max-width: 600px){
+      #nav{
+        height: 3.5em;
+      }
+      #spimg #spsrc{
+        margin-top: 0;
+      }
+      #sec2 #title, #sec4title{
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      #sec2{
+        height: 150vh;
+      }
+      #sec2 #fp, #sec2 #sp{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #sec2 #fp #fpimg #fpsrc, #sec2 #sp #spimg #spsrc{
+        margin-bottom: 1vw;
+      } 
+      #sec2 #sp{
+        flex-direction: column-reverse;
+        
+      }
+      #sec2 #sp #spcontent{
+        margin-right: 0;
+        text-align: center;
+        font-size: 0.7rem;
+      }
+      #sec2 #fp #fpcontent{
+        margin-left: 0;
+        text-align: center;
+        font-size: 0.7rem;
+        height: 50%;
+      }
+      #sec2 #fp #fpcontent p, #sec2 #sp #spcontent p{
+        text-align: justify;
+      }
+      #sec2 #fp #fpcontent{
+        height: 100%;
+      }
+      #sec2 #sp #spcontent{
+        height: 100%;
+      }
+      #sec2 #sec2content #fp{
+        height: 35%;
+        width: 90%;
+      }
+      #sec2 #sec2content #sp{
+        height: 50%;
+        width: 90%;
+      }
+      #sec2content{
+        height: 100%;
+        width: 95%;
+      }
+      #sec2 #title{
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+      }
+      #sec2content #fp #fpimg{
+        width: 30vw;
+        height: 35vw;
+        justify-content: center;
+      }
+      #sec2content #fp #fpimg #fpsrc{
+        width: 25vw;
+        height: 25vw;
+      }
+      #sec2content #sp #spimg{
+        width: 30vw;
+        height: 35vw;
+      }
+      #sec2content #sp #spimg #spsrc{
+        width: 25vw;
+        height: 25vw;
+      }
+      #sec3{
+        flex-direction: column-reverse;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      #sec3title{
+        font-size: 1.5rem;
+      }
+      #sec3 #sec3text{
+        width: 85%;
+        height: 75%;
+      }
+      #sec3 img{
+        width: 85%;
+        height: 18%;
+      }
+      #nav #btns{
+        width: 20em;
+      }
+      #nav #btns button{
+        width: 100%;
+      }
+      #sec4{
+        height: 130vh;
+      }
+      #sec4 #sec4content #sec4row1{
+        flex-direction: column;
+        height: 70%
+      }
+      #sec4 #sec4content #sec4row1 div, #sec4row2 div{
+        width: 70%;
+      }
+      #sec4 #sec4content #sec4row2 div{
+        margin-top: -5em;
+      }
+      #sec4 #sec4content #sec4row2{
+        height: 30%;
+      }
+      #sec4row1 #right{
+        margin-top: 1em;
+      }
+      #sec4 p{
+        font-size: .6rem
+      }
+      #sec4 #left, #sec4 #right, #sec4 #middle{
+        height: 42%;
+      }
+
+    }
+    @media (max-width: 485px){
+      #sec2{
+        height: 170vh;
+      }
+      #sec2 #sec2content{
+        width: 80%;
+      }
+      #sec2 #sec2content #fp #fpcontent, #sec2 #sec2content #sp #spcontent, #sec3 p, #sec4 p{
+        font-size: .67rem;
+      }
+      #sec3{
+        height: 100vh;
+      }
+      #sec3 #sec3text{
+        width: 70%;
+        height: 75%;
+        font-size: .65rem;
+      }
+      #sec3 img{
+        width: 70%;
+        height: 18%;
+      }
+      #ham{
+        visibility: visible;
+      }
+      #nav{
+        visibility: hidden;
+      }
+      .swiper .swiper-button-next, .swiper .swiper-button-prev{
+        display: none;
+      }
+    }
+    @media (min-height: 844px){
+      #sec2{
+        height: 120vh;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3 p, #sec4 p{
+        font-size: .75rem;
+      }
+      #sec3{
+        height: 90vh;
+      }
+    }
+    @media (max-width: 390px){
+      #sec2{
+        height: 160vh;
+      }
+      #sec2 #sp #spimg{
+        margin-bottom: 2em;
+      }
+      #sec2 #sp{
+        margin-bottom: 2em;
+      }
+      #sec3{
+        height: 120vh;
+      }
+    }
+    @media (min-height: 1020px){
+      #sec2{
+        height: 100vh;
+      }
+    }
+    .swiper .swiper-button-next, .swiper .swiper-button-prev{
+      outline: none;
+    }
+    .swiper .swiper-button-prev:hover, .swiper .swiper-button-next:hover{
+      color: #83a0cf;
+    }
+    #ham{
+      height: 3em;
+      background-color: white;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      z-index: 99;
+    }
+    #hamIcon{
+      width: 3em;
+      height: 3em;
+    }
+    #hamBtn, #hamBtn img{
+      width: 100%;
+      height: 100%;
+    }
+    #hamBtn img{
+      transform: scale(.6);
+    }
+    #hamlogo{
+      font-size: 1.5rem;
+      margin-left: 3vw;;
+      font-weight: bold;
+      color: black;
+      margin-right: .5em;
+    }
+    #hamBtn{
+      border: none;
+      background-color: white;
+      cursor: pointer;
+    }
+    #hamBtn:hover{
+      background-color: rgb(211, 211, 211);
+    }
+    #hamcontainer{
+      box-shadow: 0 0 50px 0 black;
+      width: 0vw;
+      height: 100vh;
+      background-color: rgb(255, 255, 255);
+      position: fixed;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      visibility: hidden;
+    }
+    #hamaboutBtn, #hamregisterBtn, #hamcontactBtn{
+      width: 100%;
+      height: 4em;
+      text-align: left;
+      background-color: rgb(230, 230, 230);
+      font-size: 1.1rem;
+      border: none;
+      box-sizing: border-box;
+    }
+    #hamaboutBtn{
+      border-top: 1px solid rgb(200, 200, 200);
+      border-bottom: 1px solid rgb(200, 200, 200);
+    }
+    #hamregisterBtn, #hamcontactBtn{
+      border-bottom: 1px solid rgb(200, 200, 200);
+    }
+    #hamBTN{
+      height: 4em;
+      text-align: right;
+      border: none;
+    }
+    #hamcontainer img{
+      width: 1.5em;
+      height: 1.5em;
+      margin-right: 1em;
+    }
+    #hamcontainer span{
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+  <div id="nav">
+    <div id="logoContainer"><img src="logo.PNG" id="logo"></div>
+    <div id="btns">
+      <button id="aboutBtn">About us</button>
+      <button id="registerBtn">Registration</button>
+      <button id="contactBtn">Contact us</button>
+    </div>
+  </div>
+  <div id="ham">
+    <div id="hamIcon">
+      <button id="hamBtn"><img src="menu-bar.png" id="hamBtnImg"></button>
+    </div>
+    <img src="logo.PNG" id="hamLogo">
+  </div>
+  <div id="hamcontainer">
+    <button id="hamBTN"><img src="menu-bar.png"></button>
+    <button id="hamaboutBtn"><span>About Us</span></button>
+    <button id="hamregisterBtn"><span>Registration</span></button>
+    <button id="hamcontactBtn"><span>Contact Us</span></button>
+  </div>
+  <div id="sec1">
+    <div class="swiper">
+      <!-- Add CONTACT US HTML -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="image-slider1.jpeg"></div>
+        <div class="swiper-slide"><img src="image-slider2.jpeg"></div>
+        <div class="swiper-slide"><img src="image-slider3.jpeg"></div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+  <div id="sec2">
+    <div id="sec2content">
+      <label id="title">Letter from Secretary General and Deputy!</label>
+      <div id="fp">
+        <div id="fpimg">
+          <img src="kayla.jpg" id="fpsrc">
+        </div>
+        <div id="fpcontent">
+          <label>Greetings!</label>
+          <p>Hi delegates! I am very enthusiastic to welcome you to SVPMUN x UIMUN 2024. This year, we are providing you with fresh, new themes and topics to be discussed throughout the conference. This MUN will be a great experience and opportunity for you to learn about voicing your rights and opinions. We hope that all of you can enhance your diplomacy skills, and practice international mindedness in formulating solutions throughout the conference. May this event be meaningful for everyone joining.</p>
+        </div>
+      </div>
+      <div id="sp">
+        <div id="spcontent">
+          <label>Greetings!</label>
+          <p>As the Secretary-General of the 2024 SVPMUN Secretariat, I am excited to welcome everyone to the Sekolah Victory Plus Model United Nations. My journey with MUN began in 7th grade, profoundly shaping my diplomatic skills and enabling me to form invaluable global connections that have been essential for my academic and personal growth. This year, I am honored to co-organize this prestigious event, a platform where students from across Indonesia converge to tackle international issues and partake in enriching experiences.</p>
+
+          <p>SVPMUN is more than just an annual event; it's a vibrant community that nurtures groundbreaking ideas and fosters solutions with real-world potential. It's a place where lifelong friendships are formed, and unforgettable memories are made. As we gear up for SVPMUN 2024, I am filled with anticipation and excitement to witness the impactful interactions and experiences that will unfold, contributing to the legacy of this remarkable Model United Nations.</p>
+
+        </div>
+        <div id="spimg">
+          <img src="Anatasya Putri.jpeg" id="spsrc">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="sec3">
+    <img src="image-slider6.jpeg">
+    <div id="sec3text">
+      <label id="sec3title">About Us</label>
+      <div>
+        <hr color="black">
+      </div>
+      <div>
+        <p>Model United Nations helps students learn more about the principles of the United Nations and how it works. Many of today's leaders in law, government, business and the arts (including at the UN itself) participated in Model PBB while still students.</p>
+        <p>On this occasion, the 2024 Victory Plus Model United Nations (SVPMUN) School is the only Model PBB event for Middle School-Senior High School classes in Bekasi.</p>
+        <p>SVPMUN 2024 combines various events ranging from the Model UN Conference, training, to socialization events between participants. The UN conference model is designed to hone public speaking and explore research and critical thinking skills. Approximately 150 middle and high school participants from various schools throughout Indonesia are targeted to take part in this event. SVPMUN trains them to compete and be responsible for the country delegations they choose during the conference. Then each delegation met individually to discuss various topics related to the general theme determined by each UN division. In dealing with each topic, each delegation strives to achieve its country's goals. In the end, all delegations and conference committees worked together to create a series of resolutions, to address existing problems, and submitted them to the Model UN committee. During the conference, Model United Nations uses 100% English so this event is also an opportunity to actualize English language skills.</p>
+      </div>
+      </div>
+  </div>
+  <div id="sec4">
+    <div id="sec4content">
+      <label id="sec4title">Upcoming Events</label>
+      <div id="sec4row1">
+        <div id="left">
+          <label>Workshop</label>
+          <br>
+          <img src="image 4.png">
+          <p>The MUN training workshop was open to the public for two days, held exclusively by UI MUN and SVPMUN. Aiming to train public speaking, research and critical thinking skills, this training will prepare participants for a simulation of the upcoming UN conference. We are targeting approximately 150 participants to take part in this training.
+            Implementation Date: Saturday, March 2 2024 Sunday, March 3 2024.</p>
+        </div>
+        <div id="right">
+          <label>MUN Conference</label>
+          <br>
+          <img src="image 5.png">
+          <p>The main event of SVPMUN 2024 is a simulation or model of the UN conference which will be held for 2 days. This PBB model is paid at the price attached in the "Registration Price List" section. Each country's delegation meets individually to discuss various topics related to the general theme determined by each UN division. We are targeting approximately 150 participants to take part in this training.
+            Implementation Date: Saturday, April 20 2024 Sunday, April 21 2024.</p>
+        </div>
+      </div>
+      <br><br>
+      <div id="sec4row2">
+        <div id="middle">
+          <label>Social Night</label>
+          <br>
+          <img src="image 6.png">
+          <p>The last event we will hold is a social night or evening social party. The party will be held the evening after the MUN conference. The aim of this social event is to get to know fellow delegates better and continue discussions in a livelier atmosphere. So, this event is informal.
+            Implementation date:
+            Saturday, April 20, 2024 (after conference).</p>
+        </div>
+      </div>
+    </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const registerBtn = document.getElementById('registerBtn')
+    const contactBtn = document.getElementById('contactBtn')
+
+    registerBtn.onclick = () => {
+      window.open('https://hitpay.shop/s/1ks6km')
+    }
+
+    contactBtn.onclick= () => {
+      window.location.href = 'contact.html'
+    }
+
+    let aboutBtn = document.getElementById('aboutBtn')
+    const section = document.getElementById('sec3')
+
+    aboutBtn.onclick = () => {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    const swiper = new Swiper('.swiper', {
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      // Optional parameters
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+    });
+    
+    const hamContainer = document.getElementById('hamcontainer')
+    const hamBtn = document.getElementById('hamBtn')
+    const hamBtnImg = document.getElementById('hamBtnImg')
+    const ham = document.getElementById('ham')
+
+    const hamBTN = document.getElementById('hamBTN')
+    const hamaboutBtn = document.getElementById('hamaboutBtn')
+    const hamregisterBtn = document.getElementById('hamregisterBtn')
+    const hamcontactBtn = document.getElementById('hamcontactBtn')
+
+    hamcontactBtn.onclick = () => {
+      window.location.href = 'contact.html'
+    }
+
+
+    let expand = false
+
+
+    document.addEventListener('click', event => {
+      if (event.target !== hamContainer && event.target !== hamBtn && event.target !== hamBtnImg && event.target !== hamregisterBtn && event.target !== hamcontactBtn){
+        if(expand){
+          hamContainer.style.width = '0vw'
+          hamContainer.style.visibility = 'hidden'
+          hamBTN.style.visibility = 'hidden'
+          hamContainer.style.transition = 'width 0.2s ease-out, visibility 0.3s linear'
+          hamBTN.style.transition = 'visibility 0.15s linear'
+
+          hamaboutBtn.style.visibility = 'hidden'
+          hamregisterBtn.style.visibility = 'hidden'
+          hamcontactBtn.style.visibility = 'hidden'
+          expand = false
+        }
+      }
+    })
+
+    hamBtn.onclick = () => {
+      hamContainer.style.width = '80vw'
+      hamContainer.style.transition = 'width 0.2s ease-out'
+
+      hamContainer.style.visibility = 'visible'
+      hamaboutBtn.style.visibility = 'visible'
+      hamregisterBtn.style.visibility = 'visible'
+      hamcontactBtn.style.visibility = 'visible'
+      hamBTN.style.visibility = 'visible'
+      expand = true
+    }
+
+    hamaboutBtn.onclick = () => {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+
+  </script>
+</body>
+</html>
