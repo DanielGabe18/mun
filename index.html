@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="icon" href="logo.PNG" type="image/x-icon">
   <style>
     body{
       margin: 0;
@@ -587,7 +586,7 @@
       flex-direction: column;
       visibility: hidden;
     }
-    #hamaboutBtn, #hamregisterBtn, #hamcontactBtn{
+    #hamaboutBtn, #hamregisterBtn, #hamcontactBtn, #hamcouncilBtn{
       width: 100%;
       height: 4em;
       text-align: left;
@@ -600,7 +599,7 @@
       border-top: 1px solid rgb(200, 200, 200);
       border-bottom: 1px solid rgb(200, 200, 200);
     }
-    #hamregisterBtn, #hamcontactBtn{
+    #hamregisterBtn, #hamcontactBtn, #hamcouncilBtn{
       border-bottom: 1px solid rgb(200, 200, 200);
     }
     #hamBTN{
@@ -628,6 +627,7 @@
       <button id="aboutBtn">About us</button>
       <button id="registerBtn">Registration</button>
       <button id="contactBtn">Contact us</button>
+      <button id="councilBtn">Councils</button>
     </div>
   </div>
   <div id="ham">
@@ -641,6 +641,7 @@
     <button id="hamaboutBtn"><span>About Us</span></button>
     <button id="hamregisterBtn"><span>Registration</span></button>
     <button id="hamcontactBtn"><span>Contact Us</span></button>
+    <button id="hamcouncilBtn"><span>Councils</span></button>
   </div>
   <div id="sec1">
     <div class="swiper">
@@ -668,15 +669,15 @@
         </div>
         <div id="fpcontent">
           <label>Greetings!</label>
-          <p>As the Secretary-General of the 2024 SVPMUN Secretariat, I am excited to welcome everyone to the Sekolah Victory Plus Model United Nations. My journey with MUN began in 7th grade, profoundly shaping my diplomatic skills and enabling me to form invaluable global connections that have been essential for my academic and personal growth. This year, I am honored to co-organize this prestigious event, a platform where students from across Indonesia converge to tackle international issues and partake in enriching experiences.</p>
-          <p>SVPMUN is more than just an annual event; it's a vibrant community that nurtures groundbreaking ideas and fosters solutions with real-world potential. It's a place where lifelong friendships are formed, and unforgettable memories are made. As we gear up for SVPMUN 2024, I am filled with anticipation and excitement to witness the impactful interactions and experiences that will unfold, contributing to the legacy of this remarkable Model United Nations.</p>
-          
+          <p>Hi delegates! I am very enthusiastic to welcome you to SVPMUN x UIMUN 2024. This year, we are providing you with fresh, new themes and topics to be discussed throughout the conference. This MUN will be a great experience and opportunity for you to learn about voicing your rights and opinions. We hope that all of you can enhance your diplomacy skills, and practice international mindedness in formulating solutions throughout the conference. May this event be meaningful for everyone joining.</p>
         </div>
       </div>
       <div id="sp">
         <div id="spcontent">
           <label>Greetings!</label>
-          <p>Hi delegates! I am very enthusiastic to welcome you to SVPMUN x UIMUN 2024. This year, we are providing you with fresh, new themes and topics to be discussed throughout the conference. This MUN will be a great experience and opportunity for you to learn about voicing your rights and opinions. We hope that all of you can enhance your diplomacy skills, and practice international mindedness in formulating solutions throughout the conference. May this event be meaningful for everyone joining.</p>
+          <p>As the Secretary-General of the 2024 SVPMUN Secretariat, I am excited to welcome everyone to the Sekolah Victory Plus Model United Nations. My journey with MUN began in 7th grade, profoundly shaping my diplomatic skills and enabling me to form invaluable global connections that have been essential for my academic and personal growth. This year, I am honored to co-organize this prestigious event, a platform where students from across Indonesia converge to tackle international issues and partake in enriching experiences.</p>
+
+          <p>SVPMUN is more than just an annual event; it's a vibrant community that nurtures groundbreaking ideas and fosters solutions with real-world potential. It's a place where lifelong friendships are formed, and unforgettable memories are made. As we gear up for SVPMUN 2024, I am filled with anticipation and excitement to witness the impactful interactions and experiences that will unfold, contributing to the legacy of this remarkable Model United Nations.</p>
 
         </div>
         <div id="spimg">
@@ -722,7 +723,7 @@
         <div id="middle">
           <label>Social Night</label>
           <br>
-          <img src="image 6.png">
+          <img src="image 6.jpeg">
           <p>The last event we will hold is a social night or evening social party. The party will be held the evening after the MUN conference. The aim of this social event is to get to know fellow delegates better and continue discussions in a livelier atmosphere. So, this event is informal.
             Implementation date:
             Saturday, April 20, 2024 (after conference).</p>
@@ -735,9 +736,14 @@
   <script>
     const registerBtn = document.getElementById('registerBtn')
     const contactBtn = document.getElementById('contactBtn')
+    const councilBtn = document.getElementById('councilBtn')
+
+    councilBtn.onclick= () => {
+        window.location.href = 'councils.html'
+    }
 
     registerBtn.onclick = () => {
-      window.open('https://hitpay.shop/s/1ks6km')
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSeWG1ciDs-2rUINOrAroRbCOBswwBbzYHBa1JAUteoTMWziPw/viewform?usp=sf_link')
     }
 
     contactBtn.onclick= () => {
@@ -784,13 +790,20 @@
     const hamaboutBtn = document.getElementById('hamaboutBtn')
     const hamregisterBtn = document.getElementById('hamregisterBtn')
     const hamcontactBtn = document.getElementById('hamcontactBtn')
+    const hamcouncilBtn = document.getElementById('hamcouncilBtn')
+
+
+    hamcouncilBtn.onclick = () => {
+        window.location.href = 'councils.html'
+      }
+
 
     hamcontactBtn.onclick = () => {
       window.location.href = 'contact.html'
     }
 
     hamregisterBtn.onclick = () => {
-      window.open('https://hitpay.shop/s/1ks6km')
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSeWG1ciDs-2rUINOrAroRbCOBswwBbzYHBa1JAUteoTMWziPw/viewform?usp=sf_link')
     }
 
 
