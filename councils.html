@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+      text-decoration: none;
+    }
+    #nav {
+      background-color: #ffffff;
+      color: white;
+      padding: .5em;
+      height: 4em;
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      border: none;
+      position: fixed;
+      z-index: 999;
+      visibility: visible;
+    }
+
+    #nav #btns{
+      width: 30em;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      border: none;
+    }
+    #nav #btns button{
+      width: 100%;
+      font-size: 1.2rem;
+      background-color: #ffffff;
+      border: none;
+      transition: background-color 0.1s linear, color 0.1s linear;
+    }
+    #nav #btns button:hover{
+      cursor: pointer;
+      background-color: #213555;
+      color: white;
+    }
+    #logo{
+      width: 55px;
+      height: 55px;
+    }
+    #hamLogo{
+      width: 3em;
+      height: 3em;
+      margin-right: .4em;
+    }
+    #logoContainer{
+      height: 4em;
+      width: 5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #sec1{
+      height: 100vh;
+      width: 100%;
+      margin: auto;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      user-select: none;
+    }
+    .swiper{
+      width: 100%;
+      height: 100%;
+    }
+    #sec1 img{
+      width: 100%; /* Stretch the width to 100% of the container */
+      height: 100%; /* Stretch the height to 100% of the container */
+      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    }
+    #sec2{
+      background-color: #213555;
+      height: 125vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #FFEFCE;
+    }
+    #sec2content{
+      height: 93%;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    #sec2 #title{
+      font-size: 3.5rem;
+      margin-bottom: 2vh;
+      margin: 0;
+      font-family: "Dancing Script", cursive;
+      letter-spacing: 3px;
+    }
+    #sec2 #sec2content #fp{
+      height: 30%;
+      width: 95%;
+    }
+    #sec2 #sec2content #sp{
+      height: 45%;
+      width: 95%;
+    }
+
+    #sec2 #fp, #sec2 #sp{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      ;
+    }
+    #sec2 #fp #fpimg{
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      ;
+    }
+    #sec2 #sp #spimg{
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      ;
+
+    }
+    #spimg #spsrc{
+      margin-top: 5vw;
+    }
+    #sec2 #fp #fpcontent{
+      font-size: 1.1rem;
+      text-align: justify;
+      margin-left: 2.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      ;
+    }
+    #sec2 #sp #spcontent{
+      font-size: 1.1rem;
+      text-align: justify;
+      margin-right: 2.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      ;
+    }
+    #fpimg #fpsrc, #spimg #spsrc{
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+
+    }
+    #fpimg #fpsrc, #spimg #spsrc{
+      margin-bottom: .5em;
+    }
+    #sec3{
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #FFEFCE;
+    }
+    #sec3 img{
+      width: 50%;
+      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+      height: 100%
+    }
+    #sec3 #sec3text{
+      width: 45%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      ;
+    }
+
+    #sec3title{
+      font-size: 2.5rem;
+    }
+    #sec4{
+      height: 190vh;
+      background-color: #213555;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #sec4title{
+      font-size: 2.5rem;
+      color: #FFEFCE;
+    } 
+    #sec4content{
+      width: 90%;
+      height: 92%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      ;
+    }
+    #sec4content div{
+      width: 100%;
+      height: 50%;
+      ;
+    }
+    #sec4row1{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    #sec4row1{
+      margin-top: 3em;
+    }
+    #sec4row2{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    #sec4row1 div, #sec4row2 div{
+      width: 40%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      ;
+    }
+    #sec4row1 #left label, #sec4row1 #right label, #sec4row2 #middle label{
+      font-size: 1.1em;
+      color: #FFEFCE;
+    }
+    #sec4row1 #left p, #sec4row1 #right p, #sec4row2 #middle p{
+      color: #FFEFCE;
+      text-align: justify;
+    }
+    #sec4row1 #left img, #sec4row1 #right img, #sec4row2 #middle img{
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+    }
+    #sec5{
+      height: 20vh;
+      background-color: black;
+    }
+    @media (max-width: 1366px){
+      #sec2 #title, #sec3title, #sec4title{
+        font-size: 2.5rem;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3text div p, #sec4 p{
+        font-size: .9rem;
+      }
+
+    }
+    @media (max-width: 1066px){
+      #sec2{
+        height: 140vh;
+      }
+      #sec3{
+        height: 100%;
+      }
+      #sec2content div{
+        height: 50%;
+      }
+    }
+    @media (max-width: 882px){
+      #sec2 #title, #sec3title, #sec4title{
+        font-size: 2rem;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3text div p, #sec4 p{
+        font-size: .8rem;
+      }
+    }
+    @media (max-width: 806px){
+      #sec2 #title, #sec3title{
+        font-size: 1.7rem;
+      }
+      #nav #btns button{
+        font-size: .9rem;
+      }
+    }
+    @media (max-width: 738px){
+      #sec2 #fp #fpimg #fpsrc, #sec2 #sp #spimg #spsrc{
+        width: 130px;
+        height: 130px;
+      }
+      #fpimg #fpsrc{
+        margin-bottom: .5em;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3text div p, #sec4 p{
+        font-size: .6rem;
+      }
+      #sec2{
+        height: 90vh;
+      }
+      #sec3{
+        height: 100%;
+      }
+      #sec4{
+        height: 110vh;
+      }
+    }
+    @media (max-width: 600px){
+      #nav{
+        height: 3.5em;
+      }
+      #spimg #spsrc{
+        margin-top: 0;
+      }
+      #sec2 #title, #sec4title{
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      #sec2{
+        height: 150vh;
+      }
+      #sec2 #fp, #sec2 #sp{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #sec2 #fp #fpimg #fpsrc, #sec2 #sp #spimg #spsrc{
+        margin-bottom: 1vw;
+      } 
+      #sec2 #sp{
+        flex-direction: column-reverse;
+        
+      }
+      #sec2 #sp #spcontent{
+        margin-right: 0;
+        text-align: center;
+        font-size: 0.7rem;
+      }
+      #sec2 #fp #fpcontent{
+        margin-left: 0;
+        text-align: center;
+        font-size: 0.7rem;
+        height: 50%;
+      }
+      #sec2 #fp #fpcontent p, #sec2 #sp #spcontent p{
+        text-align: justify;
+      }
+      #sec2 #fp #fpcontent{
+        height: 100%;
+      }
+      #sec2 #sp #spcontent{
+        height: 100%;
+      }
+      #sec2 #sec2content #fp{
+        height: 35%;
+        width: 90%;
+      }
+      #sec2 #sec2content #sp{
+        height: 50%;
+        width: 90%;
+      }
+      #sec2content{
+        height: 100%;
+        width: 95%;
+      }
+      #sec2 #title{
+        margin-bottom: 5vw;
+        margin-top: 5vw;
+      }
+      #sec2content #fp #fpimg{
+        width: 30vw;
+        height: 35vw;
+        justify-content: center;
+      }
+      #sec2content #fp #fpimg #fpsrc{
+        width: 25vw;
+        height: 25vw;
+      }
+      #sec2content #sp #spimg{
+        width: 30vw;
+        height: 35vw;
+      }
+      #sec2content #sp #spimg #spsrc{
+        width: 25vw;
+        height: 25vw;
+      }
+      #sec3{
+        flex-direction: column-reverse;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+      #sec3title{
+        font-size: 1.5rem;
+      }
+      #sec3 #sec3text{
+        width: 85%;
+        height: 75%;
+      }
+      #sec3 img{
+        width: 85%;
+        height: 18%;
+      }
+      #nav #btns{
+        width: 20em;
+      }
+      #nav #btns button{
+        width: 100%;
+      }
+      #sec4{
+        height: 130vh;
+      }
+      #sec4 #sec4content #sec4row1{
+        flex-direction: column;
+        height: 70%
+      }
+      #sec4 #sec4content #sec4row1 div, #sec4row2 div{
+        width: 70%;
+      }
+      #sec4 #sec4content #sec4row2 div{
+        margin-top: -5em;
+      }
+      #sec4 #sec4content #sec4row2{
+        height: 30%;
+      }
+      #sec4row1 #right{
+        margin-top: 1em;
+      }
+      #sec4 p{
+        font-size: .6rem
+      }
+      #sec4 #left, #sec4 #right, #sec4 #middle{
+        height: 42%;
+      }
+
+    }
+    @media (max-width: 485px){
+      #sec2{
+        height: 170vh;
+      }
+      #sec2 #sec2content{
+        width: 80%;
+      }
+      #sec2 #sec2content #fp #fpcontent, #sec2 #sec2content #sp #spcontent, #sec3 p, #sec4 p{
+        font-size: .67rem;
+      }
+      #sec3{
+        height: 100%;
+      }
+      #sec3 #sec3text{
+        width: 70%;
+        height: 75%;
+        font-size: .65rem;
+      }
+      #sec3 img{
+        width: 70%;
+        height: 18%;
+      }
+      #ham{
+        visibility: visible;
+      }
+      #nav{
+        visibility: hidden;
+      }
+      .swiper .swiper-button-next, .swiper .swiper-button-prev{
+        display: none;
+      }
+      #sec4 {
+        height: 160vh;
+      }
+    }
+    @media (min-height: 844px){
+      #sec2{
+        height: 120vh;
+      }
+      #sec2 #fp #fpcontent, #sec2 #sp #spcontent, #sec3 p, #sec4 p{
+        font-size: .75rem;
+      }
+      #sec3{
+        height: 100%;
+      }
+    }
+    @media (max-width: 390px){
+      #sec2{
+        height: 160vh;
+      }
+      #sec2 #sp #spimg{
+        margin-bottom: 2em;
+      }
+      #sec2 #sp{
+        margin-bottom: 2em;
+      }
+      #sec3{
+        height: 100%;
+      }
+    }
+    @media (min-height: 1020px){
+      #sec2{
+        height: 100vh;
+      }
+    }
+    .swiper .swiper-button-next, .swiper .swiper-button-prev{
+      outline: none;
+    }
+    .swiper .swiper-button-prev:hover, .swiper .swiper-button-next:hover{
+      color: #83a0cf;
+    }
+    #ham{
+      height: 3em;
+      background-color: white;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      z-index: 99;
+    }
+    #hamIcon{
+      width: 3em;
+      height: 3em;
+    }
+    #hamBtn, #hamBtn img{
+      width: 100%;
+      height: 100%;
+    }
+    #hamBtn img{
+      transform: scale(.6);
+    }
+    #hamlogo{
+      font-size: 1.5rem;
+      margin-left: 3vw;;
+      font-weight: bold;
+      color: black;
+      margin-right: .5em;
+    }
+    #hamBtn{
+      border: none;
+      background-color: white;
+      cursor: pointer;
+    }
+    #hamBtn:hover{
+      background-color: rgb(211, 211, 211);
+    }
+    #hamcontainer{
+      box-shadow: 0 0 50px 0 black;
+      width: 0vw;
+      height: 100vh;
+      background-color: rgb(255, 255, 255);
+      position: fixed;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      visibility: hidden;
+    }
+    #hamaboutBtn, #hamregisterBtn, #hamcontactBtn, #hamcouncilBtn{
+      width: 100%;
+      height: 4em;
+      text-align: left;
+      background-color: rgb(230, 230, 230);
+      font-size: 1.1rem;
+      border: none;
+      box-sizing: border-box;
+    }
+    #hamaboutBtn{
+      border-top: 1px solid rgb(200, 200, 200);
+      border-bottom: 1px solid rgb(200, 200, 200);
+    }
+    #hamregisterBtn, #hamcontactBtn{
+      border-bottom: 1px solid rgb(200, 200, 200);
+    }
+    #hamBTN{
+      height: 4em;
+      text-align: right;
+      border: none;
+    }
+    #hamcontainer img{
+      width: 1.5em;
+      height: 1.5em;
+      margin-right: 1em;
+    }
+    #hamcontainer span{
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+  <div id="nav">
+    <div id="logoContainer"><img src="logo.PNG" id="logo"></div>
+    <div id="btns">
+      <button id="aboutBtn">About us</button>
+      <button id="registerBtn">Registration</button>
+      <button id="contactBtn">Contact us</button>
+      <button id="councilBtn">Councils</button>
+    </div>
+  </div>
+  <div id="ham">
+    <div id="hamIcon">
+      <button id="hamBtn"><img src="menu-bar.png" id="hamBtnImg"></button>
+    </div>
+    <img src="logo.PNG" id="hamLogo">
+  </div>
+  <div id="hamcontainer">
+    <button id="hamBTN"><img src="menu-bar.png"></button>
+    <button id="hamaboutBtn"><span>About Us</span></button>
+    <button id="hamregisterBtn"><span>Registration</span></button>
+    <button id="hamcontactBtn"><span>Contact Us</span></button>
+    <button id="hamcouncilBtn"><span>Councils</span></button>
+  </div>
+  </div>
+  <div id="sec3">
+    <div id="sec3text">
+        <br><br><br><br>
+      <label id="sec3title">Councils and Topic Overview</label>
+      <div>
+        <hr color="black">
+      </div>
+      <div>
+        <br>
+        <b>CRISIS</b>
+        <p>The Crisis Council is a very distinguished council in the MUN conferences, this council is unlike those which are specifically organised under the United Nations and upholds real-life matters within conferences. Crisis is a council where historical or hypothetical events are put into a situation where delegates are tasked to represent a group or an individual related to a crisis that they must confront and ultimately unfold. In this council, delegates are expected to utilise their imagination and critical thinking in solving matters which are so vivid to those of reality and put themselves in the shoes of these representatives in order to rule this matter in one way or the other. </p>
+        <p>“Captain America Civil War: Addressing the Future of Superhumans within Society”
+            Who do you side with, Justice or Injustice? The year is 2016, you are a part of the earth's mightiest superheroes and you are tasked to make a decision that might alter history forever. Tony Stark, better known as Ironman, seeks accountability from the world as he sides with the Sokovia Accords, a set of legal documents made by the United Nations to suppress the recklessness of the Avengers. On the other hand, Steve Rogers better known as Captain America chooses to side against this matter fearing the loss of independence. In the midst of tension, Bucky Barnes, or the Winter Soldier is implicated in a terrorist attack. The outcome of success is in the palm of your hands, who will be the victor, Justice or Injustice?
+            </p>
+        <br>
+        <b>UNSC</b>
+        <p>UNSC (United Nations Security Council) is one of the six main organs of the United Nations, that aims to ensure international peace and security. The UNSC’s power outlined in the United Nations Charter allows them to establish peacekeeping operations, international sanctions, also military action authorization. The goal of pursuing international peace and security itself is done through actions, activities, and operations that maintain international peace, investigate disputes, situations, and interventions on a global scale, and recommend methods of adjusting such disputes. </p>
+        <p>“Ensuring Global Peace and Security: Addressing the Threat of Terrorism in Mali”
+            The Sahel is known as a region dividing the Sahara and the Savanna, located in areas such as Burkina Faso, Cameroon, The Gambia, Mali, Nigeria, and more. Over the past decade, countless insurgent groups of Tuareg people have been emerging and have been fighting against the Malian government up until the present day for the sake of gaining territory and independence, causing political unrest and threatening to continue their reign of terrorism across Malian borders. Reports of non-state armed groups (NSAGs) in Mali have continuously increased, signifying the spread of terrorism across the country. However, countries of Burkina Faso, Chad, Mali, Mauritania, and Niger formed the Group of Five for the Sahel Joint Force (FC-G5S) in 2017 aiming to fight against the threat of terrorism and organised crime brought by these groups. 
+            </p>
+        <b>PRESS</b>
+        <p>The Press Corps is an essential component in demonstrating the procedure ‘The United Nations’ undergoes. As a part of the Press Corps, delegates are assigned as journalists from news corporations, apart from representing different countries. Their position as delegates arises to be journalists, aiming to formulate journals or other types of media to summarise the conference. The role of these journalists is crucial as they are responsible for being the vessel of representation for all. However, it's important to notice that each journalist will deliver information based on their corporation, hence, delivered with their own perspective.</p>
+        <b>UNHRC</b>
+        <p>UNHRC (The United Nations Human Rights Council) is an intergovernmental body within the United Nations responsible for strengthening the promotion and protection of human rights around the globe. Established in 2006, it serves as an international forum for dialogue on human rights issues between UN officials and mandated experts, states, civil society, and other participants. It has the ability to discuss and address all thematic human rights issues that require its attention and make recommendations on them, adopting resolutions that express the will of the international community in given situations.
+        </p>
+        <p>“The Question of Human Rights in the Mineral Industry”
+            Minerals are a vital resource for many industries, especially in energy supply, construction, and manufacturing. But in every industry, there is bound to be exploitation - and the mining sector has a long history of human rights abuses that continue to be prevalent to this day. Low wages, lack of worker rights, and the use of child labour are only a fraction of the issues that have plagued the industry for years. These incidents are well-documented, yet there have been very few improvements in working conditions. There is still much to address and much more to be done when it comes to preserving the rights of miners in the mineral industry. 
+            </p>
+        <b>UNICEF</b>
+        <p>UNICEF (The United Nations Children’s Fund) is a global beacon committed to guaranteeing the well-being and rights of each and every child. UNICEF was established in 1946, operating in over 190 countries to provide healthcare, education, and protection to children in need. With the incredible commitment of UNICEF to create a world where children can thrive and explore, UNICEF collaborated with governments, NGOs, and communities to address the challenges faced by children to gain their rights and gain their full potential for a brighter future.
+        </p>
+        <p>“The Ongoing Battle Against Teenage Marriage and Pregnancy”
+            Without us realising, numerous countries have been; yet still facing the increasing trend within young pregnancy and marriage. Teenage marriage and young pregnancies refer to individuals entering an early marriage that leads them to become young parents. This typically happens during their teenage years (15-18) or in their early twenties. Along with early marriages, arise a variety of challenges as young couples figure out the responsibilities of marriage while still developing personally and financially. Factors such as limited life experience, lack of education, and financial stability play a big role making it important for young couples to balance the demands of family life with personal growth and future aspirations. As this is a crucial problem dealt with by tons of teenagers in multiple countries, it is a significant action for us to address this issue for the good of everyone.
+            </p>
+        <br><br>
+      </div>
+      </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const registerBtn = document.getElementById('registerBtn')
+    const contactBtn = document.getElementById('contactBtn')
+
+    registerBtn.onclick = () => {
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSeWG1ciDs-2rUINOrAroRbCOBswwBbzYHBa1JAUteoTMWziPw/viewform?usp=sf_link')
+    }
+
+    contactBtn.onclick= () => {
+      window.location.href = 'contact.html'
+    }
+
+    let aboutBtn = document.getElementById('aboutBtn')
+    const section = document.getElementById('sec3')
+
+    aboutBtn.onclick = () => {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    aboutBtn.onclick = () => {
+      window.location.href = 'index.html'
+    }
+
+    const swiper = new Swiper('.swiper', {
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      // Optional parameters
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+    });
+    
+    const hamContainer = document.getElementById('hamcontainer')
+    const hamBtn = document.getElementById('hamBtn')
+    const hamBtnImg = document.getElementById('hamBtnImg')
+    const ham = document.getElementById('ham')
+
+    const hamBTN = document.getElementById('hamBTN')
+    const hamaboutBtn = document.getElementById('hamaboutBtn')
+    const hamregisterBtn = document.getElementById('hamregisterBtn')
+    const hamcontactBtn = document.getElementById('hamcontactBtn')
+    const hamcouncilBtn = document.getElementById('hamcouncilBtn')
+
+    hamcouncilBtn.onclick = () => {
+      window.location.href = 'councils.html'
+    }
+
+    hamcontactBtn.onclick = () => {
+      window.location.href = 'contact.html'
+    }
+
+    hamregisterBtn.onclick = () => {
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSeWG1ciDs-2rUINOrAroRbCOBswwBbzYHBa1JAUteoTMWziPw/viewform?usp=sf_link')
+    }
+
+
+    let expand = false
+
+
+    document.addEventListener('click', event => {
+      if (event.target !== hamContainer && event.target !== hamBtn && event.target !== hamBtnImg && event.target !== hamregisterBtn && event.target !== hamcontactBtn){
+        if(expand){
+          hamContainer.style.width = '0vw'
+          hamContainer.style.visibility = 'hidden'
+          hamBTN.style.visibility = 'hidden'
+          hamContainer.style.transition = 'width 0.2s ease-out, visibility 0.3s linear'
+          hamBTN.style.transition = 'visibility 0.15s linear'
+          
+
+          hamaboutBtn.style.visibility = 'hidden'
+          hamregisterBtn.style.visibility = 'hidden'
+          hamcontactBtn.style.visibility = 'hidden'
+          hamcouncilBtn.style.visibility = 'hidden'
+          expand = false
+        }
+      }
+    })
+
+    hamBtn.onclick = () => {
+      hamContainer.style.width = '80vw'
+      hamContainer.style.transition = 'width 0.2s ease-out'
+
+      hamContainer.style.visibility = 'visible'
+      hamaboutBtn.style.visibility = 'visible'
+      hamregisterBtn.style.visibility = 'visible'
+      hamcontactBtn.style.visibility = 'visible'
+      hamBTN.style.visibility = 'visible'
+      expand = true
+    }
+
+    hamaboutBtn.onclick = () => {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    
+
+  </script>
+</body>
+</html>
