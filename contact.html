@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Us Form</title>
-<link rel="icon" href="logo.PNG" type="image/x-icon">
 <style>
     html, body {
       height: 100%;
@@ -183,7 +182,7 @@
       flex-direction: column;
       visibility: hidden;
     }
-    #hamaboutBtn, #hamregisterBtn{
+    #hamaboutBtn, #hamregisterBtn, #hamcontactBtn, #hamcouncilBtn{
       width: 100%;
       height: 4em;
       text-align: left;
@@ -196,7 +195,7 @@
       border-top: 1px solid rgb(200, 200, 200);
       border-bottom: 1px solid rgb(200, 200, 200);
     }
-    #hamregisterBtn{
+    #hamregisterBtn, #hamcontactBtn, #hamcouncilBtn{
       border-bottom: 1px solid rgb(200, 200, 200);
     }
     #hamBTN{
@@ -233,6 +232,7 @@
     <button id="aboutBtn">About us</button>
     <button id="registerBtn">Registration</button>
     <button id="contactBtn">Contact us</button>
+    <button id="councilBtn">Councils</button>
   </div>
 </div>
 <div id="ham">
@@ -245,6 +245,8 @@
   <button id="hamBTN"><img src="menu-bar.png"></button>
   <button id="hamaboutBtn"><span>About Us</span></button>
   <button id="hamregisterBtn"><span>Registration</span></button>
+  <button id="hamcontactBtn"><span>Contact Us</span></button>
+  <button id="hamcouncilBtn"><span>Councils</span></button>
 </div>
 <div id="container">
   <div class="contact-container">
@@ -268,6 +270,11 @@
   const logoContainer = document.getElementById('logoContainer')
   const logo = document.getElementById('logo')
   const aboutBtn = document.getElementById('aboutBtn')
+  const councilBtn = document.getElementById('councilBtn')
+
+  councilBtn.onclick= () => {
+      window.location.href = 'councils.html'
+    }
 
   logoContainer.onclick = () => {
     window.location.href = 'index.html'
@@ -285,13 +292,19 @@
     const hamaboutBtn = document.getElementById('hamaboutBtn')
     const registerBtn = document.getElementById('registerBtn')
     const hamregisterBtn = document.getElementById('hamregisterBtn')
+    const hamcouncilBtn = document.getElementById('hamcouncilBtn')
+
+
+    hamcouncilBtn.onclick = () => {
+      window.location.href = 'councils.html'
+    }
     
     registerBtn.onclick = () => {
-      window.open('https://hitpay.shop/s/1ks6km')
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSeWG1ciDs-2rUINOrAroRbCOBswwBbzYHBa1JAUteoTMWziPw/viewform?usp=sf_link')
       
     }
     hamregisterBtn.onclick = () => {
-      window.open('https://hitpay.shop/s/1ks6km')
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSeWG1ciDs-2rUINOrAroRbCOBswwBbzYHBa1JAUteoTMWziPw/viewform?usp=sf_link')
       
     }
     hamaboutBtn.onclick = () => {
